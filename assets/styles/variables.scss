@@ -1,0 +1,20 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+$grid-breakpoints: (
+  'md': 728px
+);
+// Background colors
+$main-bg-color: #f2f2f2;
+$primary-bg-color: #0d0d0d;
+$secondary-bg-color: #ffffff;
+$btn-primary-bg-color: #f2f2f2;
+$btn-secondary-bg-color: #ffffff;
+$btn-tertiary-bg-color: #0d0d0d;
+$btn-active-bg-color: #2b5a61;
+// Font colors
+$primary-font-color: #0d0d0d;
+$secondary-font-color: #ffffff;
+//Other
+$active-link-color: #10aca3;

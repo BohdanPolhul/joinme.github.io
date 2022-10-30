@@ -1,0 +1,86 @@
+//title
+.page-title {
+  font-size: 20px;
+  line-height: 24px;
+  @include bold-text;
+}
+.primary-title {
+  font-size: 20px;
+  line-height: 24px;
+  @include bold-text;
+}
+
+.secondary-title {
+  font-size: 13px;
+  line-height: 15px;
+  @include regular-text;
+}
+
+//text
+.primary-text {
+  font-size: 14px;
+  line-height: 17px;
+  @include regular-text;
+}
+
+//colors
+.text-white {
+  color: white;
+}
+
+.link-primary {
+  text-decoration: none;
+}
+
+//icons
+.regular-icon {
+  width: 24px;
+  height: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 728px) {
+  //title
+  .page-title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .primary-title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .secondary-title {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  //text
+  .primary-text {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  //title
+  .page-title {
+    font-size: 48px;
+    line-height: 59px;
+  }
+  .primary-title {
+    font-size: 36px;
+    line-height: 44px;
+    @include bold-text;
+  }
+  .secondary-title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  //text
+  .primary-text {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
