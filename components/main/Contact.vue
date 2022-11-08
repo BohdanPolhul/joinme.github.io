@@ -4,30 +4,44 @@
     .contacts__wrapper.regular-block-wrapper
       section.contacts__section
         .contacts__block
-          h2.contacts__block-title.page-title.text-center.pb-10
+          h2.contacts__block-title.page-title.text-center.pb-10(data-aos="fade-left")
             span Press to <span style="color:red">download</span> our app and
             br
             span dive into the ocean of interesting trips!
-          .contacts__block-section
+          .contacts__block-section(data-aos="fade-up")
             .contacts__logo.text-center
               img(src="~/assets/svg/phone.svg")
             .contacts__block-section-content
-              h2.contacts__block-section-title.page-title
+              h2.contacts__block-section-title.page-title(data-aos="fade-left")
                 span Press to <span style="color:red">download</span> our app and
                 br
                 span dive into the ocean of interesting trips!
               .contacts__group-btn
-                button
+                button(data-aos="fade-right")
                   img(src="~/assets/svg/play-market.svg")
                   span.primary-text.pl-4 {{$t('contact.btnPlayMarket')}}
-                button
+                button(data-aos="fade-left")
                   img(src="~/assets/svg/app-store.svg")
                   span.primary-text.pl-4.text-white {{$t('contact.btnAppStore')}}
 </template>
+<script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
+export default {
+  mounted() {
+    AOS.init({
+      once: true,
+      duration: 1500
+    })
+  }
+}
+</script>
 <style lang="scss">
 .contacts {
   background: #c4d8c6;
+  background-image: url('~/assets/img/app-bg.png');
+  background-size: cover;
 }
 .contacts__block-section-title {
   display: none;
@@ -56,7 +70,7 @@
       margin-bottom: 18px;
     }
     &:last-child {
-      background: #434542;
+      background: #1b2651;
       img {
         width: 52px;
         height: 52px;

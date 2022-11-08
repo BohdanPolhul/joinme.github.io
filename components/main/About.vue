@@ -3,38 +3,38 @@
   v-container 
     .about__wrapper.regular-block-wrapper
       .about__mobile
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item1.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item1.text')}}
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item2.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item2.text')}}
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item3.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item3.text')}}
-        .about__mobile-item-logo.d-flex.align-center.mx-auto
+        .about__mobile-item-logo.d-flex.align-center.mx-auto(data-aos="fade-up")
           .about__circle
           .about__logo-img.mx-8  
             img(src="~/assets/svg/users.svg")
           .about__circle
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item4.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item4.text')}}
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item5.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item5.text')}}
-        .about__mobile-item   
+        .about__mobile-item(data-aos="fade-up")   
           h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item6.title')}}
           h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item6.text')}}
       .about__tablet
-        .about__tablet-wrapper.d-flex.justify-space-between 
+        .about__tablet-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__tablet-item
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item1.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item1.text')}}
           .about__tablet-item
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item2.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item2.text')}}
-        .about__tablet-wrapper.d-flex.justify-space-between 
+        .about__tablet-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__tablet-item
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item3.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item3.text')}}
@@ -44,7 +44,7 @@
           .about__tablet-item
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item4.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item4.text')}}
-        .about__tablet-wrapper.d-flex.justify-space-between 
+        .about__tablet-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__tablet-item
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item5.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white  {{$t('about.item5.text')}}
@@ -52,7 +52,7 @@
             h1.about__mobile-title.primary-title.text-center.text-white {{$t('about.item6.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item6.text')}} 
       .about__desktop 
-        .about__desktop-wrapper.d-flex.justify-space-between 
+        .about__desktop-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__desktop-item
             h1.about__mobile-title.primary-title.text-white {{$t('about.item1.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item1.text')}}
@@ -62,14 +62,14 @@
           .about__desktop-item
             h1.about__mobile-title.primary-title.text-white {{$t('about.item3.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item3.text')}}    
-        .about__desktop-wrapper.d-flex.justify-space-between 
+        .about__desktop-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__desktop-item
             .about__circle
           .about__desktop-item
             .about__circle
           .about__desktop-item
             .about__circle
-        .about__desktop-wrapper.d-flex.justify-space-between 
+        .about__desktop-wrapper.d-flex.justify-space-between(data-aos="fade-up") 
           .about__desktop-item
             h1.about__mobile-title.primary-title.text-white {{$t('about.item4.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item4.text')}}
@@ -79,18 +79,30 @@
           .about__desktop-item
             h1.about__mobile-title.primary-title.text-white {{$t('about.item6.title')}}
             h3.about__mobile-text.primary-text.pt-4.text-white {{$t('about.item6.text')}}  
-        .about__position-logo.d-flex
+        .about__position-logo.d-flex(data-aos="fade-up")
           .about__logo-img.ma-auto
             img(src="~/assets/svg/users.svg")  
 </template>
+<script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
+export default {
+  mounted() {
+    AOS.init({
+      once: true,
+      duration: 1500
+    })
+  }
+}
+</script>
 <style lang="scss">
 .about__tablet,
 .about__desktop {
   display: none;
 }
 .about {
-  background: #434542;
+  background: #1b2651;
 }
 .about__mobile {
   display: flex;

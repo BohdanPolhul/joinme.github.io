@@ -1,10 +1,10 @@
 <template lang="pug">
     header.header 
       v-container
-        .header__wrapper
+        .header__wrapper(data-aos="zoom-in")
           .header__section.d-flex.justify-space-between.align-center
             .header__logo.d-flex.align-center
-              img(src="@/assets/svg/logo.svg")
+              img(src="@/assets/img/logo.png")
               h1.header__title.page-title
                 span.header__title--left Join
                 span.header__title--right Me
@@ -43,6 +43,9 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 export default {
   name: 'Header',
   data() {
@@ -58,6 +61,12 @@ export default {
         { title: 'Contact us', refName: 'main-page__contacts' }
       ]
     }
+  },
+  mounted() {
+    AOS.init({
+      once: true,
+      duration: 1500
+    })
   },
   methods: {
     onClickMenu(item, index) {
@@ -87,7 +96,7 @@ export default {
 }
 .header {
   width: 100%;
-  background: #434542;
+  background: #1b2651;
   position: sticky;
   top: 0;
   z-index: 100;

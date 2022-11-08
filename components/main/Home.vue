@@ -4,16 +4,20 @@
     .home__wrapper.regular-block-wrapper
       .home__section
         .home__block
-          h1.pt-4.page-title Find your <span style="color:red">perfect</span> <br> companion <br> for your perfect trip ! 
-          h3.primary-text {{$t('home.text')}}
-          .home__btn
+          h1.pt-4.page-title(data-aos="fade-right") Find your <span style="color:red">perfect</span> <br> companion <br> for your perfect trip ! 
+          h3.primary-text(data-aos="fade-left") {{$t('home.text')}}
+          .home__btn(data-aos="fade-up")
             button.primary-title {{$t('home.button')}}
-        .home__carousel
+        .home__carousel(data-aos="fade-left")
           VueSlickCarousel(v-bind="setingsCarousel")
             .home__carousel-img(v-for="(item, index) in itemsGallery" :key="`carousel-item__`+index")
               img(:src="require(`~/assets/img/${item.url}`)" draggable="false")  
 </template>
+
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
@@ -37,11 +41,17 @@ export default {
       },
       itemsGallery: [
         { url: 'travel.png' },
-        { url: 'travel.png' },
-        { url: 'travel.png' },
-        { url: 'travel.png' }
+        { url: 'travel2.jpeg' },
+        { url: 'travel3.jpeg' },
+        { url: 'travel4.jpg' }
       ]
     }
+  },
+  mounted() {
+    AOS.init({
+      once: true,
+      duration: 1500
+    })
   }
 }
 </script>
@@ -53,6 +63,8 @@ export default {
 .home {
   margin-top: 30px;
   background: #c4d8c6;
+  background-image: url('~/assets/img/main.png');
+  background-size: cover;
 }
 .home__block {
   max-width: 545px;
@@ -67,13 +79,16 @@ export default {
   button {
     width: 144px;
     height: 48px;
-    background: #434542;
+    background: #1b2651;
     color: white;
     margin-top: 28px;
   }
 }
 .home__carousel-img {
+  height: 189px;
+
   img {
+    height: 100%;
     width: 100%;
     object-fit: cover;
   }
@@ -104,6 +119,10 @@ export default {
 }
 
 @media only screen and (min-width: 768px) {
+  .home__carousel-img {
+    height: 498px;
+  }
+
   .home__btn {
     text-align: center;
     button {

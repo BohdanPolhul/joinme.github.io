@@ -43,7 +43,7 @@ export default {
 }
 .footer {
   width: 100%;
-  background: #434542;
+  background: #1b2651;
 }
 .footer__wrapper {
   padding: 20px 0 24px 0;
